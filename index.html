@@ -1304,7 +1304,7 @@
             Livraison en 7 jours
           </li>
         </ul>
-        <a href="#contact" class="btn btn-dark card-cta">Choisir Starter</a>
+        <a href="#contact" class="btn btn-dark card-cta" onclick="preselectService('Starter — 490 CHF')">Choisir Starter</a>
       </div>
 
       <!-- Pro (featured) -->
@@ -1344,7 +1344,7 @@
             1 mois de support inclus
           </li>
         </ul>
-        <a href="#contact" class="btn btn-primary card-cta">Choisir Pro</a>
+        <a href="#contact" class="btn btn-primary card-cta" onclick="preselectService('Pro — 890 CHF')">Choisir Pro</a>
       </div>
 
       <!-- Maintenance -->
@@ -1383,7 +1383,7 @@
             Sans engagement de durée
           </li>
         </ul>
-        <a href="#contact" class="btn btn-dark card-cta">Souscrire</a>
+        <a href="#contact" class="btn btn-dark card-cta" onclick="preselectService('Maintenance — 49 CHF/mois')">Souscrire</a>
       </div>
     </div>
   </div>
@@ -1499,7 +1499,7 @@
             <div class="ci-icon">📍</div>
             <div class="ci-body">
               <strong>Localisation</strong>
-              <span>Bulle, Suisse romande</span>
+              <span>Suisse romande</span>
             </div>
           </div>
         </div>
@@ -1538,9 +1538,9 @@
               <label for="service">Offre souhaitée</label>
               <select id="service" name="service">
                 <option value="">— Choisir une offre —</option>
-                <option value="starter">Starter — 490 CHF</option>
-                <option value="pro">Pro — 890 CHF</option>
-                <option value="maintenance">Maintenance — 49 CHF/mois</option>
+                <option value="Starter — 490 CHF">Starter — 490 CHF</option>
+                <option value="Pro — 890 CHF">Pro — 890 CHF</option>
+                <option value="Maintenance — 49 CHF/mois">Maintenance — 49 CHF/mois</option>
                 <option value="custom">Sur mesure / Je ne sais pas encore</option>
               </select>
             </div>
@@ -1599,8 +1599,8 @@
         <ul>
           <li><a href="#why">Notre approche</a></li>
           <li><a href="#contact">Contact</a></li>
-          <li><a href="#">Mentions légales</a></li>
-          <li><a href="#">Politique de confidentialité</a></li>
+          <li><a href="mentions-legales.html">Mentions légales</a></li>
+          <li><a href="politique-confidentialite.html">Politique de confidentialité</a></li>
         </ul>
       </div>
     </div>
@@ -1618,6 +1618,11 @@
 
 
 <script>
+  // ── Preselect service from pricing CTA ──
+  function preselectService(val) {
+    document.getElementById('service').value = val;
+  }
+
   // ── Header scroll effect ──
   const header = document.getElementById('header');
   window.addEventListener('scroll', () => {
